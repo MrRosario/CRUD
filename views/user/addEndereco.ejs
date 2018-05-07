@@ -1,0 +1,55 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %>  
+
+<% if (locals.message) { %>
+  <p style="color:green"><%- message.success %></p>
+<% } %> 
+
+<h3>Adicionar Endereço</h3>
+ 
+<form action="/adicionar-endereco" method="post" name="form2">
+  <div class="form-row">
+
+    <div class="form-group col-md-6">
+      <label for="inputAddress">Endereço</label>
+      <input type="text" class="form-control" name="local" value="<%= local %>">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputAddress">Numero</label>
+      <input type="text" class="form-control" name="numero" value="<%= numero %>">
+    </div>
+    
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <label for="inputCity">Bairro</label>
+        <input type="text" class="form-control" id="inputCity" name="bairro" value="<%= bairro %>">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="inputCity">Cidade</label>
+        <input type="text" class="form-control" id="inputCity" name="cidade" value="<%= cidade %>">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="inputCity">Estado</label>
+        <input type="text" class="form-control" id="inputCity" name="estado" value="<%= estado %>">
+      </div> 
+
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Cliente</label>
+        <select class="form-control" name="idCli">
+          <% id.forEach(function(Cliente){ %>
+              <option value="<%= Cliente.idCli %>"><%= Cliente.idCli %></option>
+          <% }) %>
+        </select>
+      </div>
+
+    </div>
+  </div>
+  <input type="submit" name="Submit" value="Enviar" />
+</form>
+<%- include ../layouts/footer.ejs %>

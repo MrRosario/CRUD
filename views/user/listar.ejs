@@ -1,0 +1,42 @@
+<%- include ../layouts/header.ejs %> 
+ <h2>Clientes</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Senha</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% if (dados) { %>
+    <% dados.forEach(function(cliente){ %>
+        <tr>   
+            <td scope="row"><%= cliente.idCli %></td>
+            <td><%= cliente.nome %></td>
+            <td><%= cliente.email %></td>
+            <td><%= cliente.senha %></td>
+            <td><%= cliente.telefone %></td>
+            <td></td>
+            <td>
+                <div style="float:left">
+                    <a href='/edit/<%= cliente.idCli %>'>Editar</a> &nbsp;                            
+                    <form method="get" action="/delete/<%= cliente.idCli %>" style="float:right">
+                        <input type="submit" name="delete" value='Excluir' onClick="return confirm('Tem certeza que quer excluir?')" />
+                        <input type="hidden" name="_method" value="delete" />
+                    </form>
+                </div>
+            </td>
+        </tr>
+    <% }) %>
+    <% } %>
+    </tbody>
+</table>
+ 
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>

@@ -1,0 +1,51 @@
+<%- include ../layouts/header.ejs %> 
+ <h2>Tabela completa
+
+ </h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Senha</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Numero</th>
+            <th scope="col">Bairro</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Estado</th>
+            <!-- <th scope="col">Ação</th> -->
+        </tr>
+    </thead>
+    <tbody>
+    <% if (dados) { %>
+    <% dados.forEach(function(res){ %>
+        <tr>   
+            <td><%= res.nome %></td>
+            <td><%= res.email %></td>
+            <td><%= res.senha %></td>
+            <td><%= res.telefone %></td>
+            <td><%= res.local %></td>
+            <td><%= res.numero %></td>
+            <td><%= res.bairro %></td>
+            <td><%= res.cidade %></td>
+            <td><%= res.estado %></td>
+            <!-- <td>
+                <div style="float:left">
+                    <a href='/edit/<%= res.idCli %>'>Editar</a> &nbsp;                            
+                    <form method="get" action="/delete/<%= res.idCli %>" style="float:right">
+                        <input type="submit" name="delete" value='Excluir' onClick="return confirm('Tem certeza que quer excluir?')" />
+                        <input type="hidden" name="_method" value="delete" />
+                    </form>
+                </div>
+            </td> -->
+        </tr>
+    <% }) %>
+    <% } %>
+    </tbody>
+</table>
+ 
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>
