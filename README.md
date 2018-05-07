@@ -7,14 +7,14 @@ https://nodejs.org/en/ <br />
 Instale o Mysql Versao 5 <br />
 https://www.mysql.com/ <br />
 
-**Na pasta raiz do projeto execute o comando**
+**Na pasta raiz do projeto execute o comando** <br />
 ``` npm install```
 
 **Cria o banco de dados e as tabelas**
 ```
-create database NodeCRUD; <br />
+create database NodeCRUD; 
 
-use NodeCRUD; <br />
+use NodeCRUD; 
 
 create table clientes ( <br />
 idCli int not null primary key AUTO_INCREMENT, <br />
