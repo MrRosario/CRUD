@@ -16,8 +16,8 @@ create database NodeCRUD;
 
 use NodeCRUD; 
 
-create table clientes ( <br />
-idCli int not null primary key AUTO_INCREMENT, <br />
+create table clientes ( 
+idCli int not null primary key AUTO_INCREMENT, 
 nome varchar(50) not null,
 email varchar(50) not null,
 senha varchar(10) not null,
@@ -54,5 +54,5 @@ const db = mysql.createConnection({
     database : 'NodeCRUD'
 });
 ```
-**Na pasta raiz execute**
+**Na pasta raiz execute** <br />
 ```node app.js ```
