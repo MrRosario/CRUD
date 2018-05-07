@@ -2,22 +2,22 @@ Node.js, & MySQL: simples (CRUD)
 ========
 
 
-Instale Nodejs 
-https://nodejs.org/en/
-Instale o Mysql Versao 5
-https://www.mysql.com/
+Instale Nodejs <br />
+https://nodejs.org/en/ <br />
+Instale o Mysql Versao 5 <br />
+https://www.mysql.com/ <br />
 
 **Na pasta raiz do projeto execute o comando**
-npm install
+``` npm install```
 
 **Cria o banco de dados e as tabelas**
+```
+create database NodeCRUD; <br />
 
-create database NodeCRUD;
+use NodeCRUD; <br />
 
-use NodeCRUD;
-
-create table clientes (
-idCli int not null primary key AUTO_INCREMENT,
+create table clientes ( <br />
+idCli int not null primary key AUTO_INCREMENT, <br />
 nome varchar(50) not null,
 email varchar(50) not null,
 senha varchar(10) not null,
@@ -35,24 +35,24 @@ estado varchar(50),
 idCli int(8) not null,
 foreign key(idCli) references clientes (idCli)
 );
-
+```
 
 **No arquivo app.js do Nodejs linhas 14 e 15 coloque no nome do seu usuario mysql e senha**
-
+```
 const db = mysql.createConnection({
     host     : 'localhost',
     user     : 'usuarioSeuBancoDados',
     password : 'senhaSeuBancoDados',
     database : 'NodeCRUD'
 });
-
+```
 **Caso na tiver senha**
-
+```
 const db = mysql.createConnection({
     host     : 'localhost',
     user     : 'usuarioSeuBancoDados',
     database : 'NodeCRUD'
 });
-
+```
 **Na pasta raiz execute**
-node app.js
+```node app.js ```
