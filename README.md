@@ -37,7 +37,7 @@ foreign key(idCli) references clientes (idCli)
 );
 ```
 
-**No arquivo app.js do Nodejs linhas 14 e 15 coloque no nome do seu usuario mysql e senha**
+**No arquivo app.js do Nodejs linhas 14 e 15 coloque o nome do seu usuario mysql e senha**
 ```
 const db = mysql.createConnection({
     host     : 'localhost',
